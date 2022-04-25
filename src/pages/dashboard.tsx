@@ -1,41 +1,46 @@
-import { PieChart } from "react-minimal-pie-chart";
 import { LOGIN } from "../router/consts";
 import { useHistory } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { PieCard } from "../components/pie-card";
+import { useDialogs, useLists, useScenarios } from "../hooks/useRequest";
+import styled from "styled-components";
+import { LogButton } from "./login";
 
-const DashboardPage = () => {
+const PieCardsDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 95%;
+ 
+`
+
+const DashboardPage = observer(() => {
   const history = useHistory();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     history.push(LOGIN);
   };
-  const data = {
-    name: "Greater China",
-    numbers: [13, 5, 83],
-  };
+
   return (
-    <div>
-      <PieChart
-        style={{ width: "200px" }}
-        totalValue={100}
-        lineWidth={20}
-        data={[
-          { title: "One", value: 30, color: "#E38627" },
-          { title: "Two", value: 30, color: "#C13C37" },
-          { title: "Three", value: 30, color: "#6A2135" },
-          { title: "Three", value: 10, color: "#e4e4e4" },
-        ]}
-      />
-      <button
+    <>
+      <PieCardsDiv>
+        <PieCard category="Dialogs" useRequestCat={useDialogs} />
+        <PieCard category="Scenarios" useRequestCat={useLists} />
+        <PieCard category="Lists" useRequestCat={useScenarios} />
+      </PieCardsDiv>
+      <LogButton style={{ marginTop: "50px" }}
         onClick={(e) => {
           e.preventDefault();
           handleLogout();
         }}
       >
         LOGOUT
-      </button>
-    </div>
+      </LogButton>
+
+    </>
+
   );
-};
+});
 
 export default DashboardPage;

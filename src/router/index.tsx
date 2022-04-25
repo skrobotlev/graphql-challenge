@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { DASHBOARD, LOGIN } from "./consts";
 import { authRoutes, notAuthRoutes } from "./routes";

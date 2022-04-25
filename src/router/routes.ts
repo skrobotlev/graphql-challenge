@@ -1,11 +1,11 @@
-import App from "../App";
 import DashboardPage from "../pages/dashboard";
+import LoginPage from "../pages/login";
 import { DASHBOARD, LOGIN } from "./consts";
 
 export const notAuthRoutes = [
   {
     path: LOGIN,
-    Component: App,
+    Component: LoginPage,
   },
 ];
 

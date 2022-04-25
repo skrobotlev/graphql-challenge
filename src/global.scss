@@ -1,0 +1,55 @@
+body {
+  max-width: 100vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Gilroy-light-italic";
+  src: url("./font/Gilroy-LightItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Gilroy-Thin";
+  src: url("./font/Gilroy-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("./font/Gilroy-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("./font/Gilroy-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("./font/Gilroy-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+#root {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: no-display;
+  min-height: 100vh;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-top: 20px;
+  font-family: "Gilroy-SemiBold";
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}

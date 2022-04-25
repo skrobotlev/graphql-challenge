@@ -1,28 +1,35 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALL_USERS = gql`
-  query {
-    getAllUsers {
-      id
-      username
-      age
-    }
-  }
-`;
-export const GET_DASH = gql`
-  query {
+export const GET_SCENARIOS = gql`
+  query getDash {
     dashboard {
-      dialogs {
+      scenarios {
         active
+        inactive
+        completed
       }
     }
   }
 `;
-export const GET_ONE_USER = gql`
-  query getUser($id: ID) {
-    getUser(id: $id) {
-      id
-      username
+export const GET_LISTS = gql`
+  query getLists {
+    dashboard {
+      lists {
+        active
+        inactive
+        completed
+      }
+    }
+  }
+`;
+export const GET_DIALOGS = gql`
+  query getDialogs {
+    dashboard {
+      dialogs {
+        active
+        inactive
+        completed
+      }
     }
   }
 `;
